@@ -18,10 +18,10 @@ export function Footer() {
           <div className="lg:col-span-6 flex flex-col justify-between">
             <div>
               <div className="flex flex-col select-none mb-6">
-                <span className="font-sans font-black tracking-[0.25em] text-2xl text-neutral-100 uppercase">
+                <span className="font-sans font-light tracking-[0.28em] text-2xl text-white uppercase">
                   LUMINA
                 </span>
-                <span className="text-[10px] tracking-[0.25em] text-neutral-400 uppercase font-sans font-medium mt-1">
+                <span className="text-[9px] sm:text-[10px] tracking-[0.25em] text-neutral-400 uppercase font-sans font-normal mt-0.5">
                   Architectural Wi-Fi Mesh Lamp
                 </span>
               </div>

@@ -223,9 +223,9 @@ export const PROMPT_STUDIES: PromptStudyItem[] = [
     category: "System Topology & Network Flow",
     iconName: "GitBranch",
     overview:
-      "Modeling the decentralized LuminaMesh architecture using Mermaid to represent ESP-NOW topology, fast roaming, and self-healing route failover.",
+      "Modeling the decentralized Lumina Mesh architecture using Mermaid to represent ESP-NOW topology, fast roaming, and self-healing route failover.",
     objective:
-      "LuminaMesh Network Architecture\n• Topology: Decentralized Multi-Hop Mesh Network\n• Protocols: ESP-NOW 2.4GHz & Dynamic Leader Election\n• Reliability: Autonomous Fallback & Self-Healing Routing",
+      "Lumina Mesh Network Architecture\n• Topology: Decentralized Multi-Hop Mesh Network\n• Protocols: ESP-NOW 2.4GHz & Dynamic Leader Election\n• Reliability: Autonomous Fallback & Self-Healing Routing",
 
     zeroShotPrompt:
       "Write a Mermaid diagram code for the workflow of a Wi-Fi router lamp.",
@@ -292,7 +292,7 @@ export const PROMPT_STUDIES: PromptStudyItem[] = [
           aspect: "Implementation Readiness",
           zeroShot: "Abstract conceptual diagram",
           fewShot:
-            "Directly implementable into LuminaMesh ESP32 production firmware",
+            "Directly implementable into Lumina Mesh ESP32 production firmware",
         },
       ],
       pedagogicalInsights: [
@@ -342,7 +342,7 @@ export const PROMPT_STUDIES: PromptStudyItem[] = [
       ],
     },
 
-    fewShotPrompt: `Add the section title 'Electro-Optical and RF Co-Design Specification for LuminaMesh Ambient Nodes' with an Abstract, and format it into a 2-column layout to keep it concise within a single page.`,
+    fewShotPrompt: `Add the section title 'Electro-Optical and RF Co-Design Specification for Lumina Mesh Ambient Nodes' with an Abstract, and format it into a 2-column layout to keep it concise within a single page.`,
 
     fewShotOutput: {
       title: "Refined Output (Few-Shot Prompting)",
@@ -353,7 +353,7 @@ export const PROMPT_STUDIES: PromptStudyItem[] = [
       previewUrl: "/assets/images/fewshot/latex.webp",
       highlights: [
         "Formatted in standard IEEE Two-Column academic layout complete with Abstract and structured sections",
-        "Formulates the electro-optical and RF co-design principles of the LuminaMesh ambient node",
+        "Formulates the electro-optical and RF co-design principles of the Lumina Mesh ambient node",
         "Comprehensive physical parameters detailing luminaire geometry, luminous intensity, and RF signal strength (RSSI)",
       ],
     },
@@ -420,7 +420,7 @@ export const PROMPT_STUDIES: PromptStudyItem[] = [
         "Primary source grounding: WELL Building Standard v2 (Feature L03: Circadian Lighting Design)",
         "Visual comfort standards: IESNA Lighting Handbook 10th Edition & EN 12464-1",
         "Key quantitative metrics: Equivalent Melanopic Lux (m-EDI), CRI Ra ≥ 90, R9 ≥ 50, UGR < 16",
-        "Structured output matrix: Quantitative benchmark table coupled with LuminaMesh protocol control guidelines",
+        "Structured output matrix: Quantitative benchmark table coupled with Lumina Mesh protocol control guidelines",
       ],
       principlesApplied: [
         "Source Grounding & Citation Framing",

@@ -28,7 +28,7 @@ export function PresentationSection({ onOpenPresentation }: PresentationSectionP
           </h2>
 
           <p className="mt-6 text-base sm:text-lg font-sans font-light text-neutral-400 leading-relaxed">
-            Official Presentation Deck compiling the architectural lighting design concept, autonomous LuminaMesh protocol, electro-optical engineering specs, and prompt engineering research.
+            Official Presentation Deck compiling the architectural lighting design concept, autonomous Lumina Mesh protocol, electro-optical engineering specs, and prompt engineering research.
           </p>
         </div>
 

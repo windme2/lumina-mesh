@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "LUMINA — Architectural Lighting & Spatial Intelligence",
-  description: "LuminaMesh transforms conventional lighting into intelligent spatial nodes.",
+  description: "Lumina Mesh transforms conventional lighting into intelligent spatial nodes.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
