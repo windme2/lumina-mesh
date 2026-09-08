@@ -13,7 +13,7 @@ export interface NavItem {
 export const NAV_ITEMS: NavItem[] = [
   { label: "Concept", targetId: "concept" },
   { label: "Spaces", targetId: "spaces-explorer" },
-  { label: "Ai Image", targetId: "prompt-study", tabKey: "ai-image" },
+  { label: "AI Image", targetId: "prompt-study", tabKey: "ai-image" },
   { label: "Desmos", targetId: "prompt-study", tabKey: "desmos" },
   { label: "Mermaid", targetId: "prompt-study", tabKey: "mermaid" },
   { label: "LaTeX", targetId: "prompt-study", tabKey: "latex" },
@@ -23,10 +23,19 @@ export const NAV_ITEMS: NavItem[] = [
 
 interface NavbarProps {
   className?: string
+  activeItem?: string
+  onNavItemClick?: (item: NavItem) => void
+  onBrandClick?: () => void
 }
 
-export function Navbar({ className }: NavbarProps) {
-  const [activeItem, setActiveItem] = React.useState<string>("Concept")
+export function Navbar({
+  className,
+  activeItem: controlledActiveItem,
+  onNavItemClick,
+  onBrandClick,
+}: NavbarProps) {
+  const [internalActiveItem, setInternalActiveItem] = React.useState<string>("Concept")
+  const activeItem = controlledActiveItem !== undefined ? controlledActiveItem : internalActiveItem
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState<boolean>(false)
 
   // Prevent background scrolling when full-screen mobile menu is open
@@ -44,14 +53,24 @@ export function Navbar({ className }: NavbarProps) {
   const scrollToTop = (e: React.MouseEvent) => {
     e.preventDefault()
     setMobileMenuOpen(false)
-    window.scrollTo({ top: 0, behavior: "smooth" })
+    setInternalActiveItem("Concept")
+    if (onBrandClick) {
+      onBrandClick()
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
   }
 
   const handleNavClick = (item: NavItem) => {
-    setActiveItem(item.label)
+    setInternalActiveItem(item.label)
     setMobileMenuOpen(false)
 
-    // Trigger tab selection in prompt study if applicable
+    if (onNavItemClick) {
+      onNavItemClick(item)
+      return
+    }
+
+    // Fallback if onNavItemClick not provided:
     if (item.tabKey) {
       const tabButton = document.querySelector(`[data-study-tab="${item.tabKey}"]`) as HTMLElement | null
       if (tabButton) tabButton.click()
@@ -89,7 +108,7 @@ export function Navbar({ className }: NavbarProps) {
           {/* Desktop Navigation Items: Aligned to the right to avoid collision with logo */}
           <nav className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-7 ml-auto">
             {NAV_ITEMS.map((item) => {
-              const isActive = activeItem === item.label
+              const isActive = activeItem?.toLowerCase() === item.label.toLowerCase()
               return (
                 <button
                   key={item.label}
@@ -153,7 +172,7 @@ export function Navbar({ className }: NavbarProps) {
             </span>
 
             {NAV_ITEMS.map((item) => {
-              const isActive = activeItem === item.label
+              const isActive = activeItem?.toLowerCase() === item.label.toLowerCase()
               return (
                 <button
                   key={item.label}

@@ -19,12 +19,26 @@ import { assetPath } from "@/lib/utils"
 
 interface PromptStudySectionProps {
   onOpenPresentation: (studyId?: string) => void
+  activeTab?: string
+  onTabChange?: (tabId: string) => void
 }
 
-export function PromptStudySection({ onOpenPresentation }: PromptStudySectionProps) {
-  const [activeTab, setActiveTab] = React.useState<string>("ai-image")
+export function PromptStudySection({
+  onOpenPresentation,
+  activeTab: controlledActiveTab,
+  onTabChange,
+}: PromptStudySectionProps) {
+  const [internalActiveTab, setInternalActiveTab] = React.useState<string>("ai-image")
+  const activeTab = controlledActiveTab !== undefined ? controlledActiveTab : internalActiveTab
   const [copiedZero, setCopiedZero] = React.useState(false)
   const [copiedFew, setCopiedFew] = React.useState(false)
+
+  const handleTabSelect = (studyId: string) => {
+    setInternalActiveTab(studyId)
+    if (onTabChange) {
+      onTabChange(studyId)
+    }
+  }
 
   const activeStudy = PROMPT_STUDIES.find((s) => s.id === activeTab) || PROMPT_STUDIES[0]
 
@@ -110,7 +124,7 @@ export function PromptStudySection({ onOpenPresentation }: PromptStudySectionPro
                 key={study.id}
                 id={study.id}
                 data-study-tab={study.id}
-                onClick={() => setActiveTab(study.id)}
+                onClick={() => handleTabSelect(study.id)}
                 className={`flex items-center gap-2.5 px-6 py-3 rounded-full text-xs font-mono tracking-wider transition-all whitespace-nowrap cursor-pointer uppercase ${
                   isActive
                     ? "bg-white text-black font-bold shadow-lg"
