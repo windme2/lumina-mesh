@@ -167,7 +167,7 @@ export function HeroSection({ onOpenPresentation }: HeroSectionProps) {
             Presented To
           </span>
           <span className="font-sans text-xs sm:text-sm font-medium text-white tracking-wide">
-            Dr. Apimuk Muangkasem
+            Dr. Apimuk Muangsuk
           </span>
           <span className="font-sans text-[10px] sm:text-[11px] text-neutral-400 font-light mt-0.5">
             Instructor

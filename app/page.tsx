@@ -91,6 +91,47 @@ export default function Home() {
     }
   }, [])
 
+  // Global Keyboard Shortcuts for presentation and prompt studies
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Ignore if user is inside an input or textarea
+      if (
+        document.activeElement?.tagName === "INPUT" ||
+        document.activeElement?.tagName === "TEXTAREA"
+      ) {
+        return
+      }
+
+      // Keys 1 to 5: Switch prompt study tabs
+      const keyToStudyTab: Record<string, string> = {
+        "1": "ai-image",
+        "2": "desmos",
+        "3": "mermaid",
+        "4": "latex",
+        "5": "notebooklm",
+      }
+
+      if (keyToStudyTab[e.key]) {
+        const tabKey = keyToStudyTab[e.key]
+        setActiveStudyTab(tabKey)
+        setActiveSection("prompt-study")
+        const el = document.getElementById("prompt-study")
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" })
+        }
+      }
+
+      // Key 'P' or 'p': Toggle presentation modal
+      if (e.key === "p" || e.key === "P") {
+        e.preventDefault()
+        setIsPresentationOpen((prev) => !prev)
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [])
+
   const handleNavItemClick = (item: NavItem) => {
     isNavClickRef.current = true
     if (navClickTimeoutRef.current) clearTimeout(navClickTimeoutRef.current)
@@ -149,7 +190,7 @@ export default function Home() {
         {/* / 02 Spatial Architecture: Full-Bleed Spaces with Sticky Locked-Scroll */}
         <HoverSliderDemo />
 
-        {/* / 03 Academic Research: Prompt Study (Ai-Image, Desmos, LaTeX, NotebookLM) */}
+        {/* / 03 Academic Research: Prompt Study (AI Image, Desmos, LaTeX, NotebookLM) */}
         <PromptStudySection
           activeTab={activeStudyTab}
           onTabChange={setActiveStudyTab}

@@ -15,8 +15,45 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://windme2.github.io/lumina-mesh"),
   title: "LUMINA — Architectural Lighting & Spatial Intelligence",
-  description: "Lumina Mesh transforms conventional lighting into intelligent spatial nodes.",
+  description:
+    "Lumina Mesh: Architectural Wi-Fi Mesh Lamp & Spatial Intelligence showcase comparing Zero-Shot vs Few-Shot prompt engineering across AI Image Generation, Desmos, Mermaid, LaTeX, and NotebookLM synthesis.",
+  keywords: [
+    "Lumina Mesh",
+    "Architectural Lighting",
+    "Spatial Intelligence",
+    "Prompt Engineering",
+    "Zero-Shot vs Few-Shot",
+    "AI Image Generation",
+    "LaTeX",
+    "Desmos",
+    "Mermaid",
+    "NotebookLM",
+  ],
+  openGraph: {
+    title: "LUMINA — Architectural Lighting & Spatial Intelligence",
+    description:
+      "Academic research contrasting Zero-Shot vs Few-Shot prompt engineering across AI Image Generation, LaTeX Typesetting, Desmos, and NotebookLM.",
+    url: "https://windme2.github.io/lumina-mesh/",
+    siteName: "LUMINA Mesh",
+    images: [
+      {
+        url: "/assets/images/living_room.webp",
+        width: 1376,
+        height: 768,
+        alt: "LUMINA Architectural Mesh Living Room Showcase",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LUMINA — Architectural Lighting & Spatial Intelligence",
+    description:
+      "Academic prompt engineering study for architectural spatial lighting, AI Image generation, and LaTeX mathematical derivations.",
+    images: ["/assets/images/living_room.webp"],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

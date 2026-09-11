@@ -9,7 +9,7 @@ export function AmbientLightController() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   return (
-    <div className="fixed bottom-6 right-6 z-40">
+    <div className="fixed bottom-6 left-6 z-40">
       {/* Expanded Controller Panel */}
       {isOpen && (
         <div className="mb-3 p-5 w-80 sm:w-96 rounded-2xl bg-neutral-900/95 backdrop-blur-xl border border-neutral-700/80 shadow-2xl text-neutral-100 animate-in fade-in slide-in-from-bottom-3 duration-200">

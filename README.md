@@ -1,4 +1,4 @@
-# LUMINA — Architectural Wi-Fi Mesh Lamp
+# LUMINA MESH — Architectural Wi-Fi Mesh Lamp
 
 > An interactive spatial intelligence showcase and academic prompt engineering presenting the convergence of architectural lighting, Japanese-Scandinavian (Japandi) minimalism, and decentralized Wi-Fi mesh telecommunications.
 
@@ -9,7 +9,7 @@
 - **Project Title:** Lumina Mesh: Architectural Wi-Fi Mesh Lamp & Spatial Intelligence
 - **Prepared by:** Mr. Intouch Charoenphon (2610717302050)
 - **Program:** Computer Engineering and Artificial Intelligence
-- **Presented to:** Dr. Apimuk Muangkasem
+- **Presented to:** Dr. Apimuk Muangsuk
 
 ---
 

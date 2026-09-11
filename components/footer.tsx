@@ -41,7 +41,7 @@ export function Footer() {
               onClick={() => handleToolClick("ai-image")}
               className="text-sm text-left hover:text-white transition-colors cursor-pointer"
             >
-              Ai Image
+              AI Image
             </button>
             <button
               onClick={() => handleToolClick("desmos")}
@@ -59,7 +59,7 @@ export function Footer() {
               onClick={() => handleToolClick("latex")}
               className="text-sm text-left hover:text-white transition-colors cursor-pointer"
             >
-              LaTex
+              LaTeX
             </button>
             <button
               onClick={() => handleToolClick("notebooklm")}
