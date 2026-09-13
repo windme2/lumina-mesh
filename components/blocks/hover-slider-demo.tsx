@@ -155,15 +155,15 @@ export function HoverSliderDemo({
             </div>
           </div>
 
-          {/* Center Titles: Single-Line, Clean (Responsive typography that fits all mobile screens) */}
+          {/* Center Titles: Single-Line, Clean architectural scale matching desktop aesthetic */}
           <div className="my-auto py-3 sm:py-6 md:py-10 z-10 relative max-w-4xl">
-            <div className="flex flex-col space-y-1.5 sm:space-y-3 md:space-y-5">
+            <div className="flex flex-col space-y-3 sm:space-y-4 md:space-y-5">
               {slides.map((slide, index) => (
                 <div key={slide.id} className="group cursor-pointer">
                   <TextStaggerHover
                     index={index}
                     text={slide.title}
-                    className="text-lg sm:text-3xl md:text-5xl lg:text-6xl uppercase tracking-tight font-sans whitespace-nowrap"
+                    className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight font-sans whitespace-nowrap"
                   />
                 </div>
               ))}

@@ -9,6 +9,8 @@ const cleanBasePath =
 const nextConfig: NextConfig = {
   output: "export",
   basePath: cleanBasePath,
+  reactStrictMode: true,
+  poweredByHeader: false,
   images: {
     unoptimized: true,
     remotePatterns: [

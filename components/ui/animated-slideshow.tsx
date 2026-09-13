@@ -84,7 +84,7 @@ export const HoverSlider = React.forwardRef<
 
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [totalSlides])
+  }, [activeSlide, changeSlide, totalSlides])
 
   return (
     <HoverSliderContext.Provider value={{ activeSlide, changeSlide, onSlideSelect }}>
@@ -99,7 +99,7 @@ HoverSlider.displayName = "HoverSlider"
 export const TextStaggerHover = React.forwardRef<
   HTMLSpanElement,
   React.HTMLAttributes<HTMLSpanElement> & TextStaggerHoverProps
->(({ text, index, onClickSlide, children, className, ...props }, ref) => {
+>(({ text, index, onClickSlide, className, ...props }, ref) => {
   const { activeSlide, changeSlide, onSlideSelect } = useHoverSliderContext()
   const isActive = activeSlide === index
 
@@ -165,10 +165,11 @@ HoverSliderImageWrap.displayName = "HoverSliderImageWrap"
 export const HoverSliderImage = React.forwardRef<
   HTMLImageElement,
   HTMLMotionProps<"img"> & HoverSliderImageProps
->(({ index, imageUrl, children, className, ...props }, ref) => {
+>(({ index, imageUrl, className, src, ...props }, ref) => {
   const { activeSlide } = useHoverSliderContext()
   return (
     <motion.img
+      src={imageUrl || src}
       className={cn("inline-block align-middle", className)}
       variants={fadeVariants}
       animate={activeSlide === index ? "visible" : "hidden"}

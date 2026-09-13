@@ -39,10 +39,12 @@ export function PromptStudySection({
   const [showRawFew, setShowRawFew] = React.useState(false)
 
   // Reset raw code views on tab change
-  React.useEffect(() => {
+  const [prevActiveTab, setPrevActiveTab] = React.useState(activeTab)
+  if (prevActiveTab !== activeTab) {
+    setPrevActiveTab(activeTab)
     setShowRawZero(false)
     setShowRawFew(false)
-  }, [activeTab])
+  }
 
   const handleTabSelect = (studyId: string) => {
     setInternalActiveTab(studyId)
@@ -182,7 +184,7 @@ export function PromptStudySection({
                 {/* Header */}
                 <div className="flex items-center justify-between pb-4 border-b border-white/10">
                   <span className="text-xs font-mono uppercase tracking-wider font-semibold text-neutral-400">
-                    1. Initial Prompt (Zero-Shot)
+                    / Initial Prompt (Zero-Shot)
                   </span>
                   <span className="text-[11px] font-mono text-neutral-500">Unconstrained</span>
                 </div>
@@ -277,7 +279,7 @@ export function PromptStudySection({
                 {/* Header */}
                 <div className="flex items-center justify-between pb-4 border-b border-white/10">
                   <span className="text-xs font-mono uppercase tracking-wider font-semibold text-amber-300">
-                    2. Refined Prompt (Few-Shot & Domain Precision)
+                     / Refined Prompt (Few-Shot & Domain Precision)
                   </span>
                   <span className="text-[11px] font-mono text-amber-400 font-semibold">High Precision</span>
                 </div>
@@ -375,7 +377,7 @@ export function PromptStudySection({
           <div className="mt-12 p-6 sm:p-10 rounded-3xl bg-neutral-950 border border-white/10 shadow-2xl">
             {/* Header Badge */}
             <div className="flex items-center gap-2 mb-6 font-mono text-xs uppercase tracking-[0.25em] text-white/60">
-              <span className="text-amber-400 font-bold">/ 03.3</span>
+              <span className="text-amber-400 font-bold">/</span>
               <span>Comparative Reflection & Academic Synthesis</span>
             </div>
 

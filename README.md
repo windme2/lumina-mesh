@@ -9,7 +9,7 @@
 - **Project Title:** Lumina Mesh: Architectural Wi-Fi Mesh Lamp & Spatial Intelligence
 - **Prepared by:** Mr. Intouch Charoenphon (2610717302050)
 - **Program:** Computer Engineering and Artificial Intelligence
-- **Presented to:** Dr. Apimuk Muangsuk
+- **Presented to:** Dr. Apimuk Muangkasem
 
 ---
 
